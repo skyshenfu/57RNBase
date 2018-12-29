@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {StyleSheet, View,Text} from "react-native";
+import {StyleSheet, View,Text,TouchableHighlight} from "react-native";
+import {store} from "../store/Store";
+
 export default class Tab2Page extends Component{
     static navigationOptions = {
         title: 'TAB2',
@@ -8,8 +10,10 @@ export default class Tab2Page extends Component{
         console.log(this.props)
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>tab2</Text>
+                <TouchableHighlight onPress={()=>{store._toggleStatus()}}>
+                    <Text style={styles.instructions}>tab2</Text>
+
+                </TouchableHighlight>
             </View>
         )
     }
