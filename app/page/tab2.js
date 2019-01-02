@@ -6,10 +6,36 @@ import {observer} from  "mobx-react"
 @observer
 export default class Tab2Page extends Component{
     static navigationOptions = {
-        title: 'TAB23',
+        title: 'TAB2',
     };
+    componentWillMount(){
+        console.log(this.props+"~~~~~~~~componentWillMount~~~~~~~~~~~~~")
+    }
+
+    componentDidMount () {
+        console.log(this.props+"~~~~~~~~componentDidMount~~~~~~~~~~~~~")
+
+    }
+    componentWillReceiveProps (nextProps) {
+        console.log(nextProps.props+"~~~~~~~~componentWillReceiveProps~~~~~~~~~~~~~")
+
+    }
+    shouldComponentUpdate (nextProps,nextState) {
+        console.log(nextProps+"~~~~~~~~shouldComponentUpdate~~~~~~~~~~~~~"+nextState)
+        return true;
+
+    }
+    componentWillUpdate (nextProps,nextState) {
+        console.log(nextProps+"~~~~~~~~componentWillUpdate~~~~~~~~~~~~~"+nextState)
+
+    }
+    componentDidUpdate (prevProps,prevState) {
+        console.log(prevProps+"~~~~~~~~componentDidUpdate~~~~~~~~~~~~~"+prevState)
+
+    }
+
     render(){
-        console.log(this.props)
+        console.log(this.state)
             return (
                 <View style={styles.container}>
                     <TouchableHighlight onPress={()=>{store._toggleStatus()}}>
@@ -20,6 +46,7 @@ export default class Tab2Page extends Component{
 
 
     }
+
 }
 const styles = StyleSheet.create({
     container: {
